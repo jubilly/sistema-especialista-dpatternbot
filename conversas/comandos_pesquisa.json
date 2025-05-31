@@ -1,0 +1,105 @@
+{
+    "conversas": [
+        {
+            "mensagens": [
+                "qual padrão devo usar",
+                "que design pattern usar",
+                "me recomende um design pattern",
+                "preciso de um padrão de projeto",
+                "sugira um padrão"
+            ],
+            "resposta": "Descreva o problema ou contexto do seu projeto, por exemplo: 'tenho muitas subclasses com comportamentos diferentes'"
+        },
+        {
+            "mensagens": [
+                "o que o padrão singleton faz",
+                "explique o padrão singleton",
+                "para que serve singleton",
+                "me fale sobre o singleton"
+            ],
+            "resposta": "O padrão Singleton garante que uma classe tenha apenas uma instância e fornece um ponto de acesso global a ela."
+        },
+        {
+            "mensagens": [
+                "quais padrões lidam com herança",
+                "quais padrões evitam herança",
+                "como evitar herança com design patterns"
+            ],
+            "resposta": "Você pode considerar padrões como Strategy ou Composition para evitar herança direta."
+        },
+        {
+            "mensagens": [
+                "me mostre exemplos do padrão observer",
+                "tem um exemplo de observer",
+                "como funciona o padrão observer"
+            ],
+            "resposta": "O padrão Observer define uma dependência um-para-muitos entre objetos, para que quando um objeto mudar de estado, seus dependentes sejam notificados automaticamente. Deseja ver um exemplo em código?"
+        },
+        {
+            "mensagens": [
+                "existe padrão para criação de objetos",
+                "qual padrão usar para criar objetos",
+                "quero controlar a criação de objetos"
+            ],
+            "resposta": "Padrões de criação incluem Factory Method, Abstract Factory e Builder. Você pode descrever melhor seu caso para eu sugerir o mais adequado?"
+        },
+        {
+            "mensagens": [
+                "quais são os tipos de design patterns",
+                "quantos padrões existem",
+                "classificações de design pattern"
+            ],
+            "resposta": "Os design patterns se dividem em três categorias: Criacionais, Estruturais e Comportamentais."
+        },
+        {
+            "mensagens": [
+                "o que é decorator?",
+                "para que serve o padrão decorator?",
+                "me explique o design pattern decorator",
+                "explique o decorator",
+                "quero entender o padrão decorator"
+            ],
+            "resposta": "Permite adicionar responsabilidades a objetos dinamicamente, fornecendo uma alternativa flexível à subclasse."
+        },
+        {
+            "mensagens": [
+                "o que é adapter?",
+                "para que serve o padrão adapter?",
+                "me explique o design pattern adapter",
+                "explique o adapter",
+                "quero entender o padrão adapter"
+            ],
+            "resposta": "Converte a interface de uma classe em outra interface esperada pelos clientes, permitindo que classes incompatíveis trabalhem juntas."
+        },
+        {
+            "mensagens": [
+                "o que é command?",
+                "para que serve o padrão command?",
+                "me explique o design pattern command",
+                "explique o command",
+                "quero entender o padrão command"
+            ],
+            "resposta": "Encapsula uma solicitação como um objeto, permitindo parametrizar clientes com diferentes solicitações."
+        },
+        {
+            "mensagens": [
+                "o que é composite?",
+                "para que serve o padrão composite?",
+                "me explique o design pattern composite",
+                "explique o composite",
+                "quero entender o padrão composite"
+            ],
+            "resposta": "Compõe objetos em estruturas de árvore para representar hierarquias parte-todo. Permite tratar objetos individuais e composições de objetos uniformemente."
+        },
+        {
+            "mensagens": [
+                "o que é facade?",
+                "para que serve o padrão facade?",
+                "me explique o design pattern facade",
+                "explique o facade",
+                "quero entender o padrão facade"
+            ],
+            "resposta": "Fornece uma interface unificada para um conjunto de interfaces em um subsistema, facilitando seu uso."
+        }
+    ]
+}

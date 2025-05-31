@@ -1,0 +1,5 @@
+chatterbot
+chatterbot_corpus
+nltk # natural language toolkit
+
+flask

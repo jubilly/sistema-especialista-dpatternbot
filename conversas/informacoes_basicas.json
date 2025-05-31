@@ -1,0 +1,104 @@
+{
+    "conversas": [
+        {
+            "mensagens": [
+                "o que é singleton?",
+                "para que serve o padrão singleton?",
+                "me explique o design pattern singleton",
+                "explique o singleton",
+                "quero entender o padrão singleton"
+            ],
+            "resposta": "Garante que uma classe tenha apenas uma instância e fornece um ponto de acesso global a ela."
+        },
+        {
+            "mensagens": [
+                "o que é factory method?",
+                "para que serve o padrão factory method?",
+                "me explique o design pattern factory method",
+                "explique o factory method",
+                "quero entender o padrão factory method"
+            ],
+            "resposta": "Define uma interface para criar um objeto, mas permite que as subclasses decidam qual classe instanciar."
+        },
+        {
+            "mensagens": [
+                "o que é observer?",
+                "para que serve o padrão observer?",
+                "me explique o design pattern observer",
+                "explique o observer",
+                "quero entender o padrão observer"
+            ],
+            "resposta": "Define uma dependência um-para-muitos entre objetos, de forma que quando um objeto muda de estado, todos os seus dependentes são notificados."
+        },
+        {
+            "mensagens": [
+                "o que é strategy?",
+                "para que serve o padrão strategy?",
+                "me explique o design pattern strategy",
+                "explique o strategy",
+                "quero entender o padrão strategy"
+            ],
+            "resposta": "Define uma família de algoritmos, encapsula cada um deles e os torna intercambiáveis. Permite variar o algoritmo independentemente do cliente."
+        },
+        {
+            "mensagens": [
+                "o que é decorator?",
+                "para que serve o padrão decorator?",
+                "me explique o design pattern decorator",
+                "explique o decorator",
+                "quero entender o padrão decorator"
+            ],
+            "resposta": "Permite adicionar responsabilidades a objetos dinamicamente, fornecendo uma alternativa flexível à subclasse."
+        },
+        {
+            "mensagens": [
+                "o que é adapter?",
+                "para que serve o padrão adapter?",
+                "me explique o design pattern adapter",
+                "explique o adapter",
+                "quero entender o padrão adapter"
+            ],
+            "resposta": "Converte a interface de uma classe em outra interface esperada pelos clientes, permitindo que classes incompatíveis trabalhem juntas."
+        },
+        {
+            "mensagens": [
+                "o que é command?",
+                "para que serve o padrão command?",
+                "me explique o design pattern command",
+                "explique o command",
+                "quero entender o padrão command"
+            ],
+            "resposta": "Encapsula uma solicitação como um objeto, permitindo parametrizar clientes com diferentes solicitações."
+        },
+        {
+            "mensagens": [
+                "o que é composite?",
+                "para que serve o padrão composite?",
+                "me explique o design pattern composite",
+                "explique o composite",
+                "quero entender o padrão composite"
+            ],
+            "resposta": "Compõe objetos em estruturas de árvore para representar hierarquias parte-todo. Permite tratar objetos individuais e composições de objetos uniformemente."
+        },
+        {
+            "mensagens": [
+                "o que é facade?",
+                "para que serve o padrão facade?",
+                "me explique o design pattern facade",
+                "explique o facade",
+                "quero entender o padrão facade"
+            ],
+            "resposta": "Fornece uma interface unificada para um conjunto de interfaces em um subsistema, facilitando seu uso."
+        },
+        {
+            "mensagens": [
+                "o que é builder?",
+                "para que serve o padrão builder?",
+                "me explique o design pattern builder",
+                "explique o builder",
+                "quero entender o padrão builder"
+            ],
+            "resposta": "Separa a construção de um objeto complexo da sua representação, de modo que o mesmo processo de construção possa criar diferentes representações."
+        }
+    ]
+}
