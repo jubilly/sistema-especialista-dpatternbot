@@ -1,35 +1,19 @@
+import json
+import sqlite3
+import os
 from nltk import word_tokenize, corpus
 from nltk.corpus import floresta
-
 from collections import Counter
 from string import punctuation
 
-import sqlite3
-import os
-
-CAMINHO_ARTIGOS = "/misc/ifba/workspaces/sistemas especialistas/bibliotecario/artigos"
-CAMINHO_BD = "/misc/ifba/workspaces/sistemas especialistas/bibliotecario"
+# Caminhos
+CAMINHO_JSON = "C:\\Users\\amand\\OneDrive\\Documentos\\Pos-Graduacao\\Segundo semestre\\sistemas-especialistas-projetos\\projeto-dpatternbot\\fontes\\design-patterns.json"
+CAMINHO_BD = "C:\\Users\\amand\\OneDrive\\Documentos\\Pos-Graduacao\\Segundo semestre\\sistemas-especialistas-projetos\\projeto-dpatternbot"
 BD_ARTIGOS = f"{CAMINHO_BD}/artigos.sqlite3"
-
 PALAVRAS_CHAVE_POR_ARTIGO = 7
 FREQUENCIA_MINIMA = 2
 
-REMOVIVEIS_LATEX = [
-    "\\textbf",
-    "\\textit",
-    "{",
-    "}"
-]
-
-CLASSES_GRAMATICAIS_INDESEJADAS = [
-    "adv",
-    "v-inf",
-    "v-fin",
-    "v-pcp",
-    "v-ger",
-    "num",
-    "adj"
-]
+CLASSES_GRAMATICAIS_INDESEJADAS = ["adv", "v-inf", "v-fin", "v-pcp", "v-ger", "num", "adj"]
 
 def inicializar():
     palavras_de_parada = set(corpus.stopwords.words("portuguese"))
@@ -40,54 +24,11 @@ def inicializar():
 
     return palavras_de_parada, classificacoes
 
-def ler_conteudo(artigo):
-    sucesso, conteudo = False, None
-
-    try:
-        with open(artigo, "r", encoding="utf-8") as arquivo:
-            conteudo = arquivo.read()
-
-            arquivo.close()
-
-        sucesso = True
-    except Exception as e:
-        print(f"erro lendo conteúdo do artigo: {str(e)}")
-
-    return sucesso, conteudo
-
-def extrair_titulo(conteudo):
-    marcador = "\\title{"
-    marcador = conteudo.index(marcador) + len(marcador)
-
-    titulo = conteudo[marcador:]
-    titulo = titulo[:titulo.index("}")]
-
-    return titulo
-
-def extrair_resumo(conteudo):
-    marcador_inicio, marcador_fim = "\\begin{resumo}", "\\end{resumo}"
-
-    marcador_inicio = conteudo.index(marcador_inicio) + len(marcador_inicio)
-    marcador_fim = conteudo.index(marcador_fim)
-
-    resumo = conteudo[marcador_inicio:marcador_fim]
-
-    return resumo
-
 def eliminar_palavras_de_parada(tokens, palavras_de_parada):
     tokens_filtrados = []
 
     for token in tokens:
         if token not in palavras_de_parada:
-            tokens_filtrados.append(token)
-
-    return tokens_filtrados
-
-def eliminar_marcacoes_latex(tokens):
-    tokens_filtrados = []
-
-    for token in tokens:
-        if token not in REMOVIVEIS_LATEX:
             tokens_filtrados.append(token)
 
     return tokens_filtrados
@@ -117,7 +58,12 @@ def eliminar_classes_gramaticais(tokens, classificacoes):
 def eliminar_frequencias_baixas(tokens):
     tokens_filtrados, frequencias = [], Counter(tokens)
 
+    # print(f"tokens enviados: {tokens}")
+
     for token, frequencia in frequencias.most_common():
+
+        # print(f"a frequencia: {frequencia}")
+        
         if frequencia >= FREQUENCIA_MINIMA:
             tokens_filtrados.append(token)
 
@@ -128,18 +74,22 @@ def iniciar_banco_artigos():
         os.remove(BD_ARTIGOS)
 
     conexao = sqlite3.connect(BD_ARTIGOS)
-
     cursor = conexao.cursor()
-    cursor.execute("CREATE TABLE IF NOT EXISTS artigos(id INTEGER, titulo TEXT, artigo TEXT)")
-    cursor.execute("CREATE TABLE IF NOT EXISTS chaves(id_artigo INTEGER, chave1 TEXT, chave2 TEXT, chave3 TEXT, chave4 TEXT, chave5 TEXT, chave6 TEXT, chave7 TEXT)")
-
+    cursor.execute("CREATE TABLE IF NOT EXISTS artigos(id INTEGER, titulo TEXT, resumo TEXT)")
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS chaves(
+            id_artigo INTEGER,
+            chave1 TEXT, chave2 TEXT, chave3 TEXT,
+            chave4 TEXT, chave5 TEXT, chave6 TEXT, chave7 TEXT
+        )
+    """)
     conexao.close()
 
-def gravar_artigo(id_artigo, titulo, chaves, artigo):
+def gravar_artigo(id_artigo, titulo, chaves, resumo):
     conexao = sqlite3.connect(BD_ARTIGOS)
     cursor = conexao.cursor()
 
-    insert = f"INSERT INTO artigos(id, titulo, artigo) VALUES({id_artigo}, '{titulo}', '{artigo}')"
+    insert = f"INSERT INTO artigos(id, titulo, resumo) VALUES({id_artigo}, '{titulo}', '{resumo}')"
     cursor.execute(insert)
 
     while len(chaves) < PALAVRAS_CHAVE_POR_ARTIGO:
@@ -163,44 +113,48 @@ def get_artigos(como_linhas = False):
         conexao.row_factory = sqlite3.Row
 
     cursor = conexao.cursor()
-    cursor.execute("SELECT id, titulo, artigo, chave1, chave2, chave3, chave4, chave5, chave6, chave7 FROM artigos, chaves WHERE chaves.id_artigo = artigos.id")
+    cursor.execute("SELECT id, titulo, resumo, chave1, chave2, chave3, chave4, chave5, chave6, chave7 FROM artigos, chaves WHERE chaves.id_artigo = artigos.id")
     artigos = cursor.fetchall()
     conexao.close()
 
-    return artigos
+    # print(f"artigos {artigos}")
 
-MAXIMO_ARTIGO = 1_000
+    return artigos
 
 if __name__ == "__main__":
     palavras_de_parada, classificacoes = inicializar()
-
     iniciar_banco_artigos()
 
-    for contador in range(1, MAXIMO_ARTIGO):
-        tex = f"{contador}.tex"
-        pdf = f"{contador}.pdf"
-        caminho_artigo = f"{CAMINHO_ARTIGOS}/{tex}"
+    with open(CAMINHO_JSON, "r", encoding="utf-8") as arquivo:
+        dados = json.load(arquivo)
 
-        if os.path.exists(caminho_artigo):
-            sucesso, conteudo = ler_conteudo(caminho_artigo)
+        for item in dados:
+            id_artigo = item["id"]
+            titulo = item["titulo"]
+            resumo = item["resumo"]
 
-            if sucesso:
-                titulo = extrair_titulo(conteudo)
-                # print(f"título do artigo: {titulo}")
-                resumo = extrair_resumo(conteudo)
-                print(f"resumo: {resumo}")
+            tokens = word_tokenize(resumo.lower())
 
-                tokens = word_tokenize(resumo.lower())
-                tokens = eliminar_palavras_de_parada(tokens, palavras_de_parada)
-                tokens = eliminar_marcacoes_latex(tokens)
-                tokens = eliminar_pontuacoes(tokens)
-                tokens = eliminar_classes_gramaticais(tokens, classificacoes)
-                tokens = eliminar_frequencias_baixas(tokens)
-                # print(f"tokens filtrados: {tokens}")
+            # print(f"1. word_tokenize id_artigo: {id_artigo}, tokens {tokens}")
 
-                gravar_artigo(contador, titulo, tokens, pdf)
-        else:
-            break
+            tokens = eliminar_palavras_de_parada(tokens, palavras_de_parada)
+            # print(f"2. palavras de parada id_artigo: {id_artigo}, tokens {tokens}")
+            tokens = eliminar_pontuacoes(tokens)
+            # print(f"3. eliminar_pontuacoes id_artigo: {id_artigo}, tokens {tokens}")
+            tokens = eliminar_classes_gramaticais(tokens, classificacoes)
+            # print(f"3. eliminar_classes_gramaticais id_artigo: {id_artigo}, tokens {tokens}")
+
+            tokens = eliminar_frequencias_baixas(tokens)
+
+            print(f"4. eliminar_frequencias_baixas id_artigo: {id_artigo}, tokens {tokens}")
+
+
+            # print(f"id_artigo: {id_artigo}, titulo: {titulo}, tokens: {tokens}, resum: {resumo}")
+
+            gravar_artigo(id_artigo, titulo, tokens, resumo)
+
+    # print("Padrões processados com sucesso.")
 
     artigos = get_artigos()
-    print(artigos)
+
+    # print(f"artigos: {artigos}")

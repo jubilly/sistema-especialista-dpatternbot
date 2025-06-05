@@ -3,3 +3,12 @@ chatterbot_corpus
 nltk # natural language toolkit
 
 flask
+
+# rodar a cli abaixo no terminal
+# pip3 install -r requirements.txt
+
+# Ordem de execução
+# python treinamento.py
+# python servico.py
+# chat/robo
+# python robo.py

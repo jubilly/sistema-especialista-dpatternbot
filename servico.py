@@ -7,7 +7,7 @@ sucesso, robo, artigos = inicializar()
 servico = Flask(NOME_ROBO)
 
 INFO = {
-    "descricao": "Robô Bibliotecário Akhenaton. Realiza atendimentos a usuários de uma biblioteca.",
+    "descricao": "Robô Dpattern. Foco em ajudar desenvolvedores a identificar qual o melhor padrão de projeto para o desenvolvimento de um sistema.",
     "versao": "1.0"
 }
 
@@ -25,6 +25,9 @@ def get_resposta():
         conteudo = request.json
         resposta = robo.get_response(conteudo["pergunta"])
 
+        print(f"pesquisa front", conteudo)
+        print(f"resposta robo", resposta)
+
         return Response(json.dumps({"resposta": resposta.text, "confianca": resposta.confidence}), status=200, mimetype="application/json")
     else:
         return Response(status=503)
@@ -40,4 +43,4 @@ def get_artigos():
 
 
 if __name__ == "__main__":
-    servico.run(host="0.0.0.0", port=5000, debug=True)
+    servico.run(host="0.0.0.0", port=5003, debug=True)

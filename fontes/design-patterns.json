@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "titulo": "Decorator",
+        "resumo": "O padrão de projeto Decorator constitui uma solução estrutural que visa prover uma abordagem flexível para a extensão de funcionalidades de objetos em tempo de execução, evitando alterações diretas em suas classes. Fundamentado no princípio da composição, o padrão permite que novos comportamentos sejam agregados a um objeto ao encapsulá-lo em estruturas denominadas decoradores, os quais compartilham a mesma interface do objeto original. Tal estratégia promove a reutilização de código e minimiza a necessidade de criação de subclasses especializadas, contribuindo para a redução da complexidade hierárquica. O Decorator é amplamente empregado em contextos nos quais se demanda a personalização incremental de funcionalidades, como em sistemas de interface gráfica, bibliotecas de fluxo de dados e arquiteturas orientadas a objetos que prezam pela aderência aos princípios SOLID, notadamente o princípio da responsabilidade única e o princípio aberto/fechado. Por meio de sua aplicação, torna-se possível alcançar soluções mais coesas, desacopladas e aderentes aos preceitos do desenvolvimento orientado a objetos."
+    },
+    {
+        "id": 2,
+        "titulo": "Adapter",
+        "resumo": "Converter a interface de uma classe em outra interface, esperada pelos clientes. O Adapter permite que classes com interfaces incompatíveis trabalhem em conjunto –o que, de outra forma, seria impossível."
+    },
+    {
+        "id": 3,
+        "titulo": "Command",
+        "resumo": "O padrão Command permite a objetos de toolkit fazer solicitações de objetosaplicação não especificados, transformando a própria solicitação num objeto. Esse objeto pode ser armazenado e passado como outros objetos. A chave desse padrão é uma classe abstrata Command, a qual declara uma interface para execução de operações. Na sua forma mais simples, essa interface inclui uma operação abstrata Execute. As subclasses concretas de Command especificam um par receptor-ação através do armazenamento do receptor como uma variável de instância e pela implementação de execute para invocar a solicitação. O receptor tem o conhecimento necessário para poder executar a solicitação."
+    },
+    {
+        "id": 4,
+        "titulo": "Façade",
+        "resumo": "Fornecer uma interface unificada para um conjunto de interfaces em um subsistema. Façade define uma interface de nível mais alto que torna o subsistema mais fácil de ser usado. A motivação é Estruturar um sistema em subsistemas ajuda a reduzir a complexidade. Um objetivo comum de todos os projetos é minimizar a comunicação e as dependências entre subsistemas. Uma maneira de atingir esse objetivo é introduzir um objeto façade (fachada), o qual fornece uma interface única e simplificada para os recursos e facilidades mais gerais de um subsistema"
+    },
+    {
+        "id": 5,
+        "titulo": "educara",
+        "resumo": "Este trabalho apresenta o desenvolvimento do EducaRA, um aplicativo educacional que utiliza a Realidade Aumentada (RA) para proporcionar uma experiência de aprendizado imersiva e interativa. O objetivo do EducaRA é melhorar a compreensão de conceitos abstratos por meio da visualização 3D de modelos educacionais em dispositivos móveis. A plataforma foi projetada para oferecer duas versões do aplicativo: a versão FULL, que utiliza RA com ARCore, e a versão REDUX, que dispensa o uso de RA, proporcionando uma experiência de visualização 3D para uma maior variedade de dispositivos. O sistema adota uma arquitetura modular, permitindo flexibilidade na implementação e manutenção, além de garantir a evolução contínua do aplicativo. A pesquisa também aborda comparações com outros trabalhos similares no uso de RA para educação e sugere direções para melhorias futuras, incluindo testes práticos em ambientes educacionais. O EducaRA se posiciona como uma ferramenta inovadora, com foco em expandir as possibilidades de aprendizado digital, acessível a um público mais amplo."
+    }
+]

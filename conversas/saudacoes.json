@@ -7,25 +7,25 @@
                 "tudo bem?",
                 "oi, tudo bem?"
             ],
-            "resposta": "Olá, sou o robô virtual, DPattern bot. Posso responder perguntas sobre design pattern e te ajudar a escolher o melhor pattern de acordo com o seu projeto. Digite 'quero entender sobre design pattern' ou pressione o botão 🔍 para procurar por informações por palavras-chave ou 🧠 por áreas de conhecimento"
+            "resposta": "Olá, sou o robô virtual, DPattern bot. Posso responder perguntas sobre artigo e te ajudar a escolher o melhor padrão de acordo com o seu projeto. Digite 'quero pesquisar padrões' ou pressione o botão 🔍 para procurar por informações por palavras-chave ou 🧠 por áreas de conhecimento"
         },
         {
             "mensagens": [
                 "bom dia"
             ],
-            "resposta": "Bom dia, sou o robô virtual, DPattern bot.  Posso responder perguntas sobre design pattern e te ajudar a escolher o melhor pattern de acordo com o seu projeto. Digite 'quero entender sobre design pattern' ou pressione o botão 🔍 para procurar por informações por palavras-chave ou 🧠 por áreas de conhecimento"
+            "resposta": "Bom dia, sou o robô virtual, DPattern bot.  Posso responder perguntas sobre artigo e te ajudar a escolher o melhor padrão de acordo com o seu projeto. Digite 'quero pesquisar padrões' ou pressione o botão 🔍 para procurar por informações por palavras-chave ou 🧠 por áreas de conhecimento"
         },
         {
             "mensagens": [
                 "boa tarde"
             ],
-            "resposta": "Boa tarde, sou o robô virtual, DPattern bot.  Posso responder perguntas sobre design pattern e te ajudar a escolher o melhor pattern de acordo com o seu projeto. Digite 'quero entender sobre design pattern' ou pressione o botão 🔍 para procurar por informações por palavras-chave ou 🧠 por áreas de conhecimento"
+            "resposta": "Boa tarde, sou o robô virtual, DPattern bot.  Posso responder perguntas sobre artigo e te ajudar a escolher o melhor padrão de acordo com o seu projeto. Digite 'quero pesquisar padrões' ou pressione o botão 🔍 para procurar por informações por palavras-chave ou 🧠 por áreas de conhecimento"
         },
         {
             "mensagens": [
                 "boa noite"
             ],
-            "resposta": "Boa noite, sou o robô virtual, DPattern bot.  Posso responder perguntas sobre design pattern e te ajudar a escolher o melhor pattern de acordo com o seu projeto. Digite 'quero entender sobre design pattern' ou pressione o botão 🔍 para procurar por informações por palavras-chave ou 🧠 por áreas de conhecimento"
+            "resposta": "Boa noite, sou o robô virtual, DPattern bot.  Posso responder perguntas sobre artigo e te ajudar a escolher o melhor padrão de acordo com o seu projeto. Digite 'quero pesquisar padrões' ou pressione o botão 🔍 para procurar por informações por palavras-chave ou 🧠 por áreas de conhecimento"
         }
     ]
 }

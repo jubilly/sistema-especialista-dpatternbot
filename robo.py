@@ -1,12 +1,13 @@
 from chatterbot import ChatBot
 from processar_artigos import get_artigos
 
-NOME_ROBO = "Robô Bibliotecário Akhenaton"
+NOME_ROBO = "Robô Dpattern. Foco em ajudar desenvolvedores a identificar qual o melhor padrão de projeto para o desenvolvimento de um sistema."
+
 BD_ROBO = "chat.sqlite3"
 
-CONFIANCA_MINIMA = 0.6
+CONFIANCA_MINIMA = 0.60
 
-CAMINHO_BD = "/misc/ifba/workspaces/sistemas especialistas/bibliotecario"
+CAMINHO_BD = "C:\\Users\\amand\\OneDrive\\Documentos\\Pos-Graduacao\\Segundo semestre\\sistemas-especialistas-projetos\\projeto-dpatternbot"
 BD_ARTIGOS = f"{CAMINHO_BD}/artigos.sqlite3"
 
 def inicializar():
@@ -33,11 +34,11 @@ def pesquisar_artigos_por_chaves(chaves, artigos):
                 artigos_selecionados[artigo["id"]] = {
                     "id": artigo["id"],
                     "titulo": artigo["titulo"],
-                    "artigo": artigo["artigo"]
+                    "resumo": artigo["resumo"]
                 }
 
                 encontrou = True
-
+    print(f"pesquisar artigos, artigo: {artigos_selecionados}")
     return encontrou, artigos_selecionados
 
 def executar(robo):
@@ -48,7 +49,7 @@ def executar(robo):
         if resposta.confidence >= CONFIANCA_MINIMA:
             print(f"🤖 {resposta.text} [confiança = {resposta.confidence}]")
         else:
-            print(f"🤖 Infelizmente, ainda não sei responder esta pergunta. Entre em contato com a biblioteca. Mais informações no site https://portal.ifba.edu.br/conquista/ensino/biblioteca [confiança = {resposta.confidence}]")
+            print(f"🤖 Infelizmente, ainda não sei responder esta pergunta. Pesquiser por mais informações em fontes como o livro Padrões de Projetos - Soluções Reutilizáveis de Software Orientados a Objetos - Autor (Erich Gamma) [confiança = {resposta.confidence}]")
             # registrar a pergunta em um log
 
 if __name__ == "__main__":

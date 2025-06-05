@@ -4,12 +4,12 @@ from chatterbot.trainers import ListTrainer
 import json
 
 CONVERSAS = [
-    "/misc/ifba/workspaces/sistemas especialistas/bibliotecario/conversas/saudacoes.json",
-    "/misc/ifba/workspaces/sistemas especialistas/bibliotecario/conversas/informacoes_basicas.json",
-    "/misc/ifba/workspaces/sistemas especialistas/bibliotecario/conversas/comandos_pesquisa.json"
+    "C:\\Users\\amand\\OneDrive\\Documentos\\Pos-Graduacao\\Segundo semestre\\sistemas-especialistas-projetos\\projeto-dpatternbot\\conversas\\comandos_pesquisa.json",
+    "C:\\Users\\amand\\OneDrive\\Documentos\\Pos-Graduacao\\Segundo semestre\\sistemas-especialistas-projetos\\projeto-dpatternbot\\conversas\\informacoes_basicas.json",
+    "C:\\Users\\amand\\OneDrive\\Documentos\\Pos-Graduacao\\Segundo semestre\\sistemas-especialistas-projetos\\projeto-dpatternbot\\conversas\\saudacoes.json"
 ]
 
-NOME_ROBO = "Robô Bibliotecário Akhenaton"
+NOME_ROBO = "Robô DPattern Bot"
 BD_ROBO = "chat.sqlite3"
 
 def criar_treinador():

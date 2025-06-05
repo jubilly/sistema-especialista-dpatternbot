@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>ChatBot Akhenaton</title>
+    <title>ChatBot DPattern bot</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
@@ -39,11 +39,17 @@
             const messageElement = document.createElement("div");
             messageElement.className = "bot";
 
-            const link = document.createElement("a");
-            link.href = artigo.link;
-            link.innerText = artigo.titulo;
-            link.target = "_self";
-            messageElement.appendChild(link);
+            const resumo = document.createElement("p");
+            const titulo = document.createElement("p");
+            titulo.textContent = artigo.titulo;
+            resumo.textContent = artigo.resumo;
+            // const link = document.createElement("a");
+            // link.href = artigo.link;
+            // link.innerText = artigo.titulo;
+            // link.target = "_self";
+            // messageElement.appendChild(link);
+            messageElement.appendChild(titulo);
+            messageElement.appendChild(resumo);
 
             const detalhes = document.createElement("button");
             detalhes.innerText = "❓";
@@ -63,7 +69,8 @@
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ "pergunta": "quero pesquisar artigos" })
+                body: JSON.stringify({ "pergunta": "quero pesquisar padrões" }),
+                credentials: "include"
             }).then(resposta => resposta.json())
                 .then(conteudo => {
                     exibirMensagem(conteudo.resposta, "bot");
@@ -83,12 +90,14 @@
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ "pergunta": mensagem })
+                body: JSON.stringify({ "pergunta": mensagem }),
+                credentials: "include"
             }).then(resposta => resposta.json())
                 .then(conteudo => {
+                    console.log('conteudo', conteudo)
                     if (conteudo.artigos_pesquisados) {
                         if (conteudo.artigos.length) {
-                            exibirMensagem("Encontrei estes artigos:", "bot");
+                            exibirMensagem("Encontrei estes padroes de projeto de software:", "bot");
                             conteudo.artigos.forEach(artigo => {
                                 exibirArtigo(artigo);
                             });
