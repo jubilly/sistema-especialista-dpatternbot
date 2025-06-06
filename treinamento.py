@@ -37,7 +37,6 @@ def treinar(treinador, conversas):
             resposta = mensagens_resposta["resposta"]
 
             for mensagem in mensagens:
-                print(f"treinando mensagem: {mensagem}, resposta: {resposta}")
 
                 treinador.train([mensagem, resposta])
 

@@ -50,7 +50,6 @@ def executar(robo):
             print(f"🤖 {resposta.text} [confiança = {resposta.confidence}]")
         else:
             print(f"🤖 Infelizmente, ainda não sei responder esta pergunta. Pesquiser por mais informações em fontes como o livro Padrões de Projetos - Soluções Reutilizáveis de Software Orientados a Objetos - Autor (Erich Gamma) [confiança = {resposta.confidence}]")
-            # registrar a pergunta em um log
 
 if __name__ == "__main__":
     sucesso, robo, _ = inicializar()

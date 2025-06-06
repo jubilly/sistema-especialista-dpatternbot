@@ -2,12 +2,12 @@
     {
         "id": 1,
         "titulo": "Decorator",
-        "resumo": "O padrão de projeto Decorator constitui uma solução estrutural que visa prover uma abordagem flexível para a extensão de funcionalidades de objetos em tempo de execução, evitando alterações diretas em suas classes. Fundamentado no princípio da composição, o padrão permite que novos comportamentos sejam agregados a um objeto ao encapsulá-lo em estruturas denominadas decoradores, os quais compartilham a mesma interface do objeto original. Tal estratégia promove a reutilização de código e minimiza a necessidade de criação de subclasses especializadas, contribuindo para a redução da complexidade hierárquica. O Decorator é amplamente empregado em contextos nos quais se demanda a personalização incremental de funcionalidades, como em sistemas de interface gráfica, bibliotecas de fluxo de dados e arquiteturas orientadas a objetos que prezam pela aderência aos princípios SOLID, notadamente o princípio da responsabilidade única e o princípio aberto/fechado. Por meio de sua aplicação, torna-se possível alcançar soluções mais coesas, desacopladas e aderentes aos preceitos do desenvolvimento orientado a objetos."
+        "resumo": "Fundamentado no princípio da composição, o padrão permite que novos comportamentos sejam agregados a um objeto ao realizar o encapsulamento em estruturas denominadas decoradores, os quais compartilham a mesma interface do objeto original. Tal estratégia promove a reutilização de código e minimiza a necessidade de criação de subclasses especializadas, contribuindo para a redução da complexidade hierárquica. O Decorator é amplamente empregado em contextos nos quais se demanda a personalização incremental de funcionalidades, como em sistemas de interface gráfica, bibliotecas de fluxo de dados e arquiteturas orientadas a objetos que prezam pela aderência aos princípios SOLID, notadamente o princípio da responsabilidade única e o princípio aberto/fechado. Por meio de sua aplicação, torna-se possível alcançar soluções mais coesas, desacopladas e aderentes aos preceitos do desenvolvimento orientado a objetos."
     },
     {
         "id": 2,
         "titulo": "Adapter",
-        "resumo": "Converter a interface de uma classe em outra interface, esperada pelos clientes. O Adapter permite que classes com interfaces incompatíveis trabalhem em conjunto –o que, de outra forma, seria impossível."
+        "resumo": "O padrão de projeto Adapter pertence à categoria estrutural e é utilizado para permitir que classes com interfaces incompatíveis possam colaborar dentro de um mesmo sistema. Ele atua como um componente intermediário que encapsula a interface original de um objeto, convertendo-a para uma forma compreensível por outras partes da aplicação. Esse padrão é comumente aplicado quando há necessidade de integração de bibliotecas externas ou componentes legados, cuja interface difere daquela exigida pelo sistema atual. A principal abordagem de implementação do Adapter envolve o uso de composição, onde o adaptador mantém uma instância do objeto original e expõe uma nova interface. O uso do Adapter favorece a reutilização de código existente, promove a coesão dos módulos e reduz o acoplamento entre os componentes do sistema. Além disso, permite maior flexibilidade na manutenção e evolução da arquitetura de software, ao isolar mudanças estruturais em pontos bem definidos da aplicação."
     },
     {
         "id": 3,
@@ -16,12 +16,62 @@
     },
     {
         "id": 4,
-        "titulo": "Façade",
-        "resumo": "Fornecer uma interface unificada para um conjunto de interfaces em um subsistema. Façade define uma interface de nível mais alto que torna o subsistema mais fácil de ser usado. A motivação é Estruturar um sistema em subsistemas ajuda a reduzir a complexidade. Um objetivo comum de todos os projetos é minimizar a comunicação e as dependências entre subsistemas. Uma maneira de atingir esse objetivo é introduzir um objeto façade (fachada), o qual fornece uma interface única e simplificada para os recursos e facilidades mais gerais de um subsistema"
+        "titulo": "Singleton",
+        "resumo": "O padrão de projeto Singleton pertence à categoria dos padrões criacionais e é utilizado para garantir que uma classe possua apenas uma instância durante a execução de um sistema. Essa instância única é controlada de maneira centralizada e acessada por meio de um ponto global de referência. O Singleton é aplicado quando há necessidade de coordenação de recursos compartilhados, como conexões com banco de dados, arquivos de configuração, ou gerenciamento de estados globais. Sua estrutura impede a criação múltipla de objetos, assegurando que apenas uma representação esteja disponível em todo o ciclo de vida da aplicação. A utilização do Singleton promove consistência no acesso a dados compartilhados, reduz a redundância na criação de objetos e facilita o controle sobre a inicialização e a liberação de recursos críticos. Em arquiteturas que requerem controle centralizado, o Singleton é considerado uma solução eficaz e de fácil manutenção."
     },
     {
         "id": 5,
-        "titulo": "educara",
-        "resumo": "Este trabalho apresenta o desenvolvimento do EducaRA, um aplicativo educacional que utiliza a Realidade Aumentada (RA) para proporcionar uma experiência de aprendizado imersiva e interativa. O objetivo do EducaRA é melhorar a compreensão de conceitos abstratos por meio da visualização 3D de modelos educacionais em dispositivos móveis. A plataforma foi projetada para oferecer duas versões do aplicativo: a versão FULL, que utiliza RA com ARCore, e a versão REDUX, que dispensa o uso de RA, proporcionando uma experiência de visualização 3D para uma maior variedade de dispositivos. O sistema adota uma arquitetura modular, permitindo flexibilidade na implementação e manutenção, além de garantir a evolução contínua do aplicativo. A pesquisa também aborda comparações com outros trabalhos similares no uso de RA para educação e sugere direções para melhorias futuras, incluindo testes práticos em ambientes educacionais. O EducaRA se posiciona como uma ferramenta inovadora, com foco em expandir as possibilidades de aprendizado digital, acessível a um público mais amplo."
+        "titulo": "Factory Method",
+        "resumo": "O Factory Method é bastante utilizado em diversos projetos, até mesmo nos casos em que temos apenas um Creator (diagrama acima), pois mesmo nessas condições o padrão nos oferece um meio de desligar a implementação de um Product. Adicionando ou alterando Products isso não irá afetar o Creator, pois eles não estão fortemente ligados. Com o padrão Factory Method podemos encapsular o código que cria objetos. É muito comum termos classes que instanciam classes concretas e essa parte do código normalmente sofre diversas modificações, portanto nesses casos usamos um Factory Method que encapsula esse comportamento de instanciação. Usando o Factory Method temos o nosso código de criação em um objeto ou método, evitando assim a duplicação e além disso temos um local único para fazer manutenção. O padrão também nos dá um código flexível e extensível para o futuro. "
+    },
+    {
+        "id": 6,
+        "titulo": "Abstract Factory",
+        "resumo": "O Abstract Factory é um padrão de projeto criacional que permite a criação de famílias de objetos relacionados ou dependentes sem especificar suas classes concretas. Em vez de criar objetos diretamente, você usa uma interface que define métodos para criar diferentes tipos de objetos de uma família, e as classes concretas da fábrica implementam essa interface para criar os objetos correspondentes. "
+    },
+    {
+        "id": 7,
+        "titulo": "Builder",
+        "resumo": "O padrão Builder é um padrão de projeto criacional que permite a criação de objetos complexos passo a passo. Ele é especialmente útil quando você precisa criar objetos que requerem muitos parâmetros ou quando deseja que o processo de criação de objetos seja mais flexível. No padrão Builder, você cria uma classe separada para construir o objeto. Essa classe tem um método para cada atributo do objeto que você deseja construir. Para construir o objeto, você chama os métodos da classe Builder na ordem desejada."
+    },
+    {
+        "id": 8,
+        "titulo": "Prototype",
+        "resumo": "O padrão de projeto Prototype pertence à categoria dos padrões criacionais e tem como principal objetivo permitir a criação de novos objetos por meio da cópia de instâncias existentes, conhecidas como protótipos. Em vez de instanciar diretamente uma nova classe com o operador new, o Prototype propõe a clonagem de um objeto previamente configurado, o que promove flexibilidade e reduz o acoplamento entre classes.  O uso do padrão Prototype é especialmente indicado em situações onde o custo de criação de um objeto é elevado, seja por sua complexidade, consumo de recursos ou necessidade de inicializações detalhadas. Ele é também vantajoso quando o sistema precisa ser independente das classes concretas dos objetos que devem ser criados, favorecendo a reutilização de estruturas já existentes. A implementação do Prototype requer que os objetos a serem clonados implementem uma interface que defina o método de cópia (geralmente clone ou equivalente). Dessa forma, cada classe concreta sabe como duplicar sua própria estrutura interna. Isso é útil, por exemplo, em editores gráficos, documentos com elementos complexos ou em sistemas de simulação, nos quais múltiplas instâncias similares são necessárias, mas com pequenas variações."
+    },
+    {
+        "id": 9,
+        "titulo": "Facade",
+        "resumo": "O padrão de projeto Facade pertence à categoria dos padrões estruturais e tem como objetivo fornecer uma interface simplificada para um conjunto complexo de classes, bibliotecas ou subsistemas. Através de uma fachada, o sistema encapsula as complexidades internas e oferece ao cliente um ponto de acesso unificado e de alto nível para a funcionalidade desejada. Esse padrão é especialmente útil quando um sistema é composto por muitos componentes interdependentes, tornando sua utilização direta difícil e sujeita a erros. Ao introduzir uma classe fachada, é possível reduzir o acoplamento entre o cliente e as classes internas do sistema, facilitando a manutenção, reutilização e compreensão da aplicação. A implementação de uma fachada envolve a criação de uma classe intermediária que agrega chamadas a diversas operações internas, escondendo os detalhes de implementação do cliente. Essa abordagem é comum em aplicações com APIs complexas, sistemas legados, módulos de integração ou qualquer arquitetura que se beneficie de uma camada de abstração adicional."
+    },
+    {
+        "id": 10,
+        "titulo": "Composite",
+        "resumo": "O padrão de projeto Composite pertence à categoria dos padrões estruturais e tem como principal finalidade tratar objetos individuais e composições de objetos de maneira uniforme. Esse padrão permite que estruturas hierárquicas de objetos sejam manipuladas como se fossem objetos únicos, simplificando o uso e o processamento de árvores de dados complexas. Em sua essência, o padrão Composite define uma estrutura em árvore na qual tanto componentes simples (objetos folha) quanto componentes compostos (estruturas com múltiplos objetos) implementam a mesma interface. Isso permite que operações sejam realizadas recursivamente em toda a estrutura, independentemente do nível da hierarquia. Esse padrão é altamente recomendado quando se deseja representar estruturas parte-todo, como árvores de diretórios, documentos compostos por seções e subseções, interfaces gráficas compostas por contêineres e widgets, ou sistemas que exigem execução uniforme de operações em elementos simples e compostos."
+    },
+    {
+        "id": 11,
+        "titulo": "Proxy",
+        "resumo": "O padrão de projeto Proxy pertence à categoria dos padrões estruturais e tem como objetivo fornecer um substituto ou representante de um objeto para controlar seu acesso. O Proxy atua como uma camada intermediária que pode adicionar funcionalidades adicionais, como controle de acesso, cache, registro ou inicialização sob demanda, sem modificar o objeto real. O padrão Proxy é adequado para situações em que o acesso direto ao objeto real é custoso ou requer controle especial, como em objetos remotos, objetos pesados ou sensíveis, ou quando se deseja adicionar comportamentos extras ao acesso, preservando a interface do objeto original."
+    },
+    {
+        "id": 12,
+        "titulo": "Observer",
+        "resumo": "O padrão Observer pertence à categoria dos padrões comportamentais e define uma dependência um-para-muitos entre objetos, de modo que quando um objeto muda seu estado, todos os seus dependentes são notificados e atualizados automaticamente. É adequado para sistemas onde múltiplos objetos precisam reagir a mudanças em outro objeto sem acoplamento forte entre eles. Esse padrão promove a desacoplamento entre o sujeito (subject) e seus observadores (observers), facilitando a manutenção e evolução do código, especialmente em interfaces gráficas, sistemas de eventos e notificações. O padrão Observer sugere que você adicione um mecanismo de assinatura à classe publicadora para que objetos individuais possam assinar ou cancelar a assinatura de um fluxo de eventos provenientes dessa publicadora. "
+    },
+    {
+        "id": 13,
+        "titulo": "Strategy",
+        "resumo": "O padrão de projeto Strategy é um padrão comportamental que permite definir uma família de algoritmos, encapsular cada um deles e torná-los intercambiáveis. Isso permite que o algoritmo varie independentemente dos clientes que o utilizam, e facilita a manutenibilidade e a expansão do código. Em essência, o Strategy substitui uma sequência de instruções complexas por uma série de objetos que implementam diferentes estratégias. Permite escolher diferentes algoritmos em tempo de execução: O cliente pode escolher qual estratégia (algoritmo) usar, sem ter que modificar o código principal. Simplifica a manutenção e expansão do código: Ao encapsular os algoritmos em classes separadas, a manutenção e a adição de novas estratégias se tornam mais fáceis. Facilita a reutilização de código: As estratégias podem ser reutilizadas em outros contextos. "
+    },
+    {
+        "id": 14,
+        "titulo": "State",
+        "resumo": "O padrão de projeto State (Estado) é um padrão comportamental que permite que um objeto altere seu comportamento quando seu estado interno muda. Em vez de usar condicionais complexas (if/else) para lidar com diferentes comportamentos baseados no estado, o padrão State encapsula esses comportamentos em classes separadas, tornando o código mais limpo, legível e fácil de manter. O padrão State é especialmente útil em situações onde o objeto tem muitos estados e comportamentos, pois torna o código mais organizado e fácil de manter."
+    },
+    {
+        "id": 15,
+        "titulo": "Mediator",
+        "resumo": "O padrão Mediator é um padrão comportamental que define um objeto que encapsula a forma como um conjunto de objetos interage. Promove o desacoplamento ao evitar que os objetos se refiram explicitamente uns aos outros, permitindo que a interação seja centralizada em um único objeto mediador. É indicado para sistemas complexos com muitas interações entre objetos, onde a comunicação direta causaria um acoplamento excessivo, dificultando a manutenção e evolução. O mediator se mostra uma ótima opção para manter nosso domínio seguro e flexível a mudanças. A remoção da necessidade de uma classe precisar do comportamento de terceiros nos trás benefícios para a melhor construção de nossa solução, evitando o acoplamento desnecessário."
     }
 ]

@@ -13,7 +13,15 @@ BD_ARTIGOS = f"{CAMINHO_BD}/artigos.sqlite3"
 PALAVRAS_CHAVE_POR_ARTIGO = 7
 FREQUENCIA_MINIMA = 2
 
-CLASSES_GRAMATICAIS_INDESEJADAS = ["adv", "v-inf", "v-fin", "v-pcp", "v-ger", "num", "adj"]
+CLASSES_GRAMATICAIS_INDESEJADAS = [
+    "adv", 
+    "v-inf", 
+    "v-fin", 
+    "v-pcp", 
+    "v-ger", 
+    "num", 
+    "adj",
+]
 
 def inicializar():
     palavras_de_parada = set(corpus.stopwords.words("portuguese"))
@@ -140,13 +148,13 @@ if __name__ == "__main__":
             tokens = eliminar_palavras_de_parada(tokens, palavras_de_parada)
             # print(f"2. palavras de parada id_artigo: {id_artigo}, tokens {tokens}")
             tokens = eliminar_pontuacoes(tokens)
-            # print(f"3. eliminar_pontuacoes id_artigo: {id_artigo}, tokens {tokens}")
+            print(f"3. eliminar_pontuacoes id_artigo: {id_artigo}, tokens {tokens}")
             tokens = eliminar_classes_gramaticais(tokens, classificacoes)
             # print(f"3. eliminar_classes_gramaticais id_artigo: {id_artigo}, tokens {tokens}")
 
             tokens = eliminar_frequencias_baixas(tokens)
 
-            print(f"4. eliminar_frequencias_baixas id_artigo: {id_artigo}, tokens {tokens}")
+            print(f"tokens: {id_artigo}, tokens {tokens}")
 
 
             # print(f"id_artigo: {id_artigo}, titulo: {titulo}, tokens: {tokens}, resum: {resumo}")

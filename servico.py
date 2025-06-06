@@ -25,9 +25,6 @@ def get_resposta():
         conteudo = request.json
         resposta = robo.get_response(conteudo["pergunta"])
 
-        print(f"pesquisa front", conteudo)
-        print(f"resposta robo", resposta)
-
         return Response(json.dumps({"resposta": resposta.text, "confianca": resposta.confidence}), status=200, mimetype="application/json")
     else:
         return Response(status=503)

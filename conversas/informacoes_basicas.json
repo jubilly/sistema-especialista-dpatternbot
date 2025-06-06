@@ -7,6 +7,41 @@
                 "me explique que é padrão de projeto"
             ],
             "resposta": "Padrão de projeto é uma solução reutilizável e comprovada para resolver um problema recorrente no contexto do desenvolvimento de software. São modelos ou esquemas que orientam como estruturar um código de forma eficiente, flexível e manutenível."
+        },
+        {
+            "mensagens": [
+                "qual a importância dos padrões de projeto de sofware?",
+                "por que é importante usar padrões de projeto de software?"
+            ],
+            "resposta": "Os padrões de projeto de software (ou design patterns) são soluções reutilizáveis e testadas para problemas comuns no desenvolvimento de software orientado a objetos. Eles não são pedaços de código prontos, mas modelos conceituais que orientam o design do sistema"
+        },
+        {
+            "mensagens": [
+                "quais são os melhores livros sobre padrões de projeto de sofware?",
+                "livros de padrões de projeto de software"
+            ],
+            "resposta": "Padrões de Projetos - Soluções Reutilizáveis de Software Orientados a Objetos - Autores: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissid"
+        },
+        {
+            "mensagens": [
+                "quem criou o padrão de projeto de sofware?",
+                "autores de padrão de projeto de sofware"
+            ],
+            "resposta": "O conceito de padrões foi primeiramente descrito por Christopher Alexander em Uma Linguagem de Padrões. A ideia foi seguida por quatro autores: Erich Gamma, John Vlissides, Ralph Johnson, e Richard Helm. Em 1994, eles publicaram Padrões de Projeto — Soluções Reutilizáveis de Software Orientado a Objetos, no qual eles aplicaram o conceito de padrões de projeto para programação. O livro mostrava 23 padrões que resolviam vários problemas de projeto orientado a objetos e se tornou um best-seller rapidamente."
+        },
+        {
+            "mensagens": [
+                "Por que devo aprender padrões?",
+                "Por que aprender padrões de projeto de sofware?"
+            ],
+            "resposta": "Os padrões de projeto são um kit de ferramentas para soluções tentadas e testadas para problemas comuns em projeto de software. Mesmo que você nunca tenha encontrado esses problemas, saber sobre os padrões é ainda muito útil porque eles ensinam como resolver vários problemas usando princípios de projeto orientado a objetos. Os padrões de projeto definem uma linguagem comum que você e seus colegas podem usar para se comunicar mais eficientemente. Você pode dizer, “Oh, é só usar um Singleton para isso,” e todo mundo vai entender a ideia por trás da sua sugestão. Não é preciso explicar o que um singleton é se você conhece o padrão e seu nome."
+        },
+        {
+            "mensagens": [
+                "quais as classificações dos padrões de projeto de software?",
+                "os padrões são classificados?"
+            ],
+            "resposta": "Os padrões criacionais fornecem mecanismos de criação de objetos que aumentam a flexibilidade e a reutilização de código. Os padrões estruturais explicam como montar objetos e classes em estruturas maiores, enquanto ainda mantém as estruturas flexíveis e eficientes. Os padrões comportamentais cuidam da comunicação eficiente e da assinalação de responsabilidades entre objetos."
         }
     ]
 }

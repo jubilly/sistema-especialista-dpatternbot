@@ -43,21 +43,9 @@
             const titulo = document.createElement("p");
             titulo.textContent = artigo.titulo;
             resumo.textContent = artigo.resumo;
-            // const link = document.createElement("a");
-            // link.href = artigo.link;
-            // link.innerText = artigo.titulo;
-            // link.target = "_self";
-            // messageElement.appendChild(link);
+
             messageElement.appendChild(titulo);
             messageElement.appendChild(resumo);
-
-            const detalhes = document.createElement("button");
-            detalhes.innerText = "❓";
-            detalhes.className = "details-button";
-            detalhes.onclick = function() {
-                alert("exibindo detalhes do artigo com ID#" + artigo.id);
-            }
-            messageElement.appendChild(detalhes);
 
             chatBox.appendChild(messageElement);
             chatBox.scrollTop = chatBox.scrollHeight;
