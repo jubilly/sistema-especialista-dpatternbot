@@ -3,18 +3,16 @@
         {
             "mensagens": [
                 "quero pesquisar padrões",
-                "quero pesquisar um artigo",
-                "quero pesquisar por um artigo",
-                "quero um artigo",
-                "preciso de um artigo"
+                "quero pesquisar um padrão de projeto",
+                "quero um padrão de projeto",
+                "preciso de um padrão de projeto"
             ],
             "resposta": "Informe as palavras-chave que deseja pesquisar, separe-as usando uma vírgula"
         },
         {
             "mensagens": [
                 "pesquisar de novo",
-                "preciso de outro artigo",
-                "quero mais artigos"
+                "preciso de outro padrão de projeto"
             ],
             "resposta": "Informe as palavras-chave que deseja pesquisar, separe-as usando uma vírgula"
         }

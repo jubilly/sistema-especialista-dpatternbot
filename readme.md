@@ -12,24 +12,4 @@ python robo.py
 python ./chat/chat.py
 
 rodar no postman um post http://127.0.0.1:5003/padroes, body:
-{
-"artigos": [
-{
-"id": 1,
-"titulo": "Reserve+ App: Aplicativo para Reservas de Ambientes",
-"artigo": "1.pdf"
-},
-{
-"id": 2,
-"titulo": "Uma Solução Modularizada e Plugável para Indexação de Informações sobre Trabalhos Acadêmicos escritos em Latex",
-"artigo": "2.pdf"
-},
-{
-"id": 3,
-"titulo": "Uma Arquitetura para um Aplicativo de Visualização de Objetos Educacionais 3D: o caso EducaRA",
-"artigo": "3.pdf"
-}
-]
-}
-
-<!-- objetos, command, solicitação, padrão -->
+{ "chave1": "objetos", "chave2": "command", "chave3": "solicitação", "chave4": "padrao", "chave5": "", "chave6": "", "chave7": ""}
