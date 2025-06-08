@@ -7,7 +7,7 @@ import secrets
 URL_ROBO = "http://localhost:5003"
 URL_ROBO_ALIVE = f"{URL_ROBO}/alive"
 URL_ROBO_RESPONDER = f"{URL_ROBO}/responder"
-URL_ROBO_PESQUISAR_ARTIGOS = f"{URL_ROBO}/artigos"
+URL_ROBO_PESQUISAR_ARTIGOS = f"{URL_ROBO}/padroes"
 
 CONFIANCA_MINIMA = 0.60
 CAMINHO_ARQUIVOS = "C:\\Users\\amand\\OneDrive\\Documentos\\Pos-Graduacao\\Segundo semestre\\sistemas-especialistas\\projeto-dpatternbot\\chat\\static\\arquivos"

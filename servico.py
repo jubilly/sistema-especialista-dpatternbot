@@ -29,7 +29,7 @@ def get_resposta():
     else:
         return Response(status=503)
     
-@servico.post("/artigos")
+@servico.post("/padroes")
 def get_artigos():
     conteudo = request.json
     chaves = [conteudo['chave1'], conteudo['chave2'], conteudo['chave3'], conteudo['chave4'], conteudo['chave5'], conteudo['chave6'], conteudo['chave7']]

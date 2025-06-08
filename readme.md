@@ -11,7 +11,7 @@ python servico.py
 python robo.py
 python ./chat/chat.py
 
-rodar no postman um post http://127.0.0.1:5003/artigos, body:
+rodar no postman um post http://127.0.0.1:5003/padroes, body:
 {
 "artigos": [
 {

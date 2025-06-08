@@ -82,14 +82,12 @@
                 credentials: "include"
             }).then(resposta => resposta.json())
                 .then(conteudo => {
-                    console.log('conteudo', conteudo)
                     if (conteudo.artigos_pesquisados) {
                         if (conteudo.artigos.length) {
                             exibirMensagem("Encontrei estes padroes de projeto de software:", "bot");
                             conteudo.artigos.forEach(artigo => {
                                 exibirArtigo(artigo);
                             });
-
                         }
                     }
 

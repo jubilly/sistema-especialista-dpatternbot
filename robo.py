@@ -7,7 +7,8 @@ BD_ROBO = "chat.sqlite3"
 
 CONFIANCA_MINIMA = 0.60
 
-CAMINHO_BD = "C:\\Users\\amand\\OneDrive\\Documentos\\Pos-Graduacao\\Segundo semestre\\sistemas-especialistas-projetos\\projeto-dpatternbot"
+CAMINHO_BD = "C:/Users/amand/OneDrive/Documentos/Pos-Graduacao/Segundo semestre/sistemas-especialistas-projetos/projeto-dpatternbot"
+
 BD_ARTIGOS = f"{CAMINHO_BD}/artigos.sqlite3"
 
 def inicializar():

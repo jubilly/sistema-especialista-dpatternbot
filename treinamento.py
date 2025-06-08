@@ -4,9 +4,9 @@ from chatterbot.trainers import ListTrainer
 import json
 
 CONVERSAS = [
-    "C:\\Users\\amand\\OneDrive\\Documentos\\Pos-Graduacao\\Segundo semestre\\sistemas-especialistas-projetos\\projeto-dpatternbot\\conversas\\comandos_pesquisa.json",
-    "C:\\Users\\amand\\OneDrive\\Documentos\\Pos-Graduacao\\Segundo semestre\\sistemas-especialistas-projetos\\projeto-dpatternbot\\conversas\\informacoes_basicas.json",
-    "C:\\Users\\amand\\OneDrive\\Documentos\\Pos-Graduacao\\Segundo semestre\\sistemas-especialistas-projetos\\projeto-dpatternbot\\conversas\\saudacoes.json"
+    "conversas/comandos_pesquisa.json",
+    "conversas/informacoes_basicas.json",
+    "conversas/saudacoes.json"
 ]
 
 NOME_ROBO = "Robô DPattern Bot"

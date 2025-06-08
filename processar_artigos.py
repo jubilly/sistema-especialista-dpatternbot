@@ -7,8 +7,8 @@ from collections import Counter
 from string import punctuation
 
 # Caminhos
-CAMINHO_JSON = "C:\\Users\\amand\\OneDrive\\Documentos\\Pos-Graduacao\\Segundo semestre\\sistemas-especialistas-projetos\\projeto-dpatternbot\\fontes\\design-patterns.json"
-CAMINHO_BD = "C:\\Users\\amand\\OneDrive\\Documentos\\Pos-Graduacao\\Segundo semestre\\sistemas-especialistas-projetos\\projeto-dpatternbot"
+CAMINHO_JSON = "fontes\design-patterns.json"
+CAMINHO_BD = "C:/Users/amand/OneDrive/Documentos/Pos-Graduacao/Segundo semestre/sistemas-especialistas-projetos/projeto-dpatternbot"
 BD_ARTIGOS = f"{CAMINHO_BD}/artigos.sqlite3"
 PALAVRAS_CHAVE_POR_ARTIGO = 7
 FREQUENCIA_MINIMA = 2
@@ -19,8 +19,7 @@ CLASSES_GRAMATICAIS_INDESEJADAS = [
     "v-fin", 
     "v-pcp", 
     "v-ger", 
-    "num", 
-    "adj",
+    "num"
 ]
 
 def inicializar():
@@ -66,12 +65,8 @@ def eliminar_classes_gramaticais(tokens, classificacoes):
 def eliminar_frequencias_baixas(tokens):
     tokens_filtrados, frequencias = [], Counter(tokens)
 
-    # print(f"tokens enviados: {tokens}")
-
     for token, frequencia in frequencias.most_common():
 
-        # print(f"a frequencia: {frequencia}")
-        
         if frequencia >= FREQUENCIA_MINIMA:
             tokens_filtrados.append(token)
 
@@ -125,8 +120,6 @@ def get_artigos(como_linhas = False):
     artigos = cursor.fetchall()
     conexao.close()
 
-    # print(f"artigos {artigos}")
-
     return artigos
 
 if __name__ == "__main__":
@@ -143,26 +136,14 @@ if __name__ == "__main__":
 
             tokens = word_tokenize(resumo.lower())
 
-            # print(f"1. word_tokenize id_artigo: {id_artigo}, tokens {tokens}")
-
             tokens = eliminar_palavras_de_parada(tokens, palavras_de_parada)
-            # print(f"2. palavras de parada id_artigo: {id_artigo}, tokens {tokens}")
             tokens = eliminar_pontuacoes(tokens)
-            print(f"3. eliminar_pontuacoes id_artigo: {id_artigo}, tokens {tokens}")
             tokens = eliminar_classes_gramaticais(tokens, classificacoes)
-            # print(f"3. eliminar_classes_gramaticais id_artigo: {id_artigo}, tokens {tokens}")
 
             tokens = eliminar_frequencias_baixas(tokens)
 
-            print(f"tokens: {id_artigo}, tokens {tokens}")
-
-
-            # print(f"id_artigo: {id_artigo}, titulo: {titulo}, tokens: {tokens}, resum: {resumo}")
-
             gravar_artigo(id_artigo, titulo, tokens, resumo)
-
-    # print("Padrões processados com sucesso.")
 
     artigos = get_artigos()
 
-    # print(f"artigos: {artigos}")
+    print(f"artigos: {artigos}")
